@@ -1,0 +1,458 @@
+/* ===================================
+   RESET & BASE STYLES
+=================================== */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+/* ===================================
+   NAVBAR STYLES
+=================================== */
+header {
+  background-color: #2bb2f0;
+  color: white;
+  padding: 15px 0;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+nav h1 {
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* ===================================
+   DASHBOARD STYLES
+=================================== */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2px;
+}
+
+.row-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* ===================================
+   STUDENT CARD STYLES
+=================================== */
+.student-container {
+  width: 180px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.student-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.student-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #2bb2f0;
+}
+
+.student-name {
+  font-family: Arial, sans-serif;
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.student-container p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===================================
+   MODAL (STUDENT DETAILS)
+=================================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+.modal-content img {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #2bb2f0;
+}
+.modal-content h2 {
+  color: #2b56af;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.modal-content p {
+  font-weight: bold;
+  font-size: 16px;
+  color: #553ddd;
+  margin-bottom: 8px;
+}
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #f8f3f3;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 8px 16px;
+  background: #c40c0c;
+  border-radius: 8px;
+}
+
+.close-btn:hover {
+  background: #ec240e;
+}
+
+/* ===================================
+   SEMESTER CAROUSEL
+=================================== */
+.semester-carousel {
+  position: relative;
+  overflow: hidden;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.semester-arrow {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* .semester-content {
+  min-width: 300px;
+} */
+.semester-content {
+  flex: 1;
+  max-width: 500px;
+  text-align: center;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.semester-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.semester-content th,
+.semester-content td {
+  border: 1px solid #333; /* table borders */
+  padding: 8px;
+  text-align: center;
+}
+
+.semester-content th {
+  background-color: #4CAF50; /* header background */
+  color: white; /* header text color */
+}
+
+.semester-content tr:nth-child(even) {
+  background-color: #f2f2f2; /* striped rows */
+}
+
+.semester-content tr:hover {
+  background-color: #ddd; /* hover effect */
+}
+
+.semester-content p {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.semester-content h3 {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* ===================================
+   ANIMATIONS
+=================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================
+   COLLEGE DETAILS
+=================================== */
+.college-details {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.college-title {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #5be41b;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.college-subtitle {
+  font-family: Arial, sans-serif;
+  color: #2b56af;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.college-tagline {
+  font-family: "Courier New", Courier, monospace;
+  color: #e4f123;
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.certification {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #000;
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+footer.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f02b3c;
+  text-align: center;
+  padding: 10px 0;
+  color: white;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1030;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+.dynamic-color {
+  color: #4b20e7;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.dynamic-color:hover {
+  color: #00ffcc;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+=================================== */
+@media (max-width: 1024px) {
+  .student-container {
+    width: 22%;
+  }
+}
+
+@media (max-width: 768px) {
+  .student-container {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-container {
+    width: 80%;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dashboard {
+  padding: 20px;
+  height: 80vh;
+  overflow-y: auto;
+}
+*/ .students-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.row-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Scrollable container for semester tables */
+.tables-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 2px;
+  padding: 10px 0;
+}
+/* ===================================
+   TABLE STYLES
+=================================== */
+.table-wrapper {
+  min-width: 300px; 
+  flex-shrink: 0;
+}
+.marks-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f7fa;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.marks-table th {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+.marks-table td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd; 
+}
+/* CGPA row styling */
+.marks-table .cgpa-row {
+  background-color: #e9f7ef;
+  font-weight: bold;
+}
+/* Scrollbar styling (optional) */
+.tables-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.tables-scroll::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 4px;
+}
+.tables-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Carousel navigation */
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev-btn {
+  margin-right: 10px;
+}
+
+.next-btn {
+  margin-left: 10px;
+}
+/* ====== Student Grid ====== */
+.students-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.modal-content .close:hover {
+  color: red;
+}

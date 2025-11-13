@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <script src="data.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div
+              class="container d-flex justify-content-between align-items-center mt-3"
+            >
+              <div class="d-flex align-items-start">
+                <img
+                  src="https://i.ibb.co/BVdgnH6/GCET-logo.png"
+                  alt="GCET-logo"
+                  width="150"
+                  height="120"
+                />
+              </div>
+              <div class="ms-1 align-items-start">
+                <p class="mb-1 college-title">
+                  <a
+                    href="https://www.geethanjaliinstitutions.com/engineering/mba.html"
+                    target="_blank"
+                    class="text-decoration-none"
+                  >
+                    Geethanjali College of Engineering and Technology
+                  </a>
+                </p>
+                <p class="mb-1 college-tagline">
+                  ...Striving Towards Perfection
+                </p>
+              </div>
+              <div class="batch">
+                <p class="mb-1 college-subtitle">An Autonomous Institution</p>
+                <p class="mb-0 college-subtitle">
+                  Approved by AICTE and Affiliated to JNTUH
+                </p>
+                <p class="mb-0 certification">ISO 9001:2015 Certified</p>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container dashboard">
+      <div class="students-list"></div>
+    </div>
+
+    <div id="marksModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="student photo" />
+    <h2 id="modalName"></h2>
+    <p id="modalRoll"></p>
+    <p id="modalEmail"></p>
+
+    <div class="semester-carousel" >
+      <!-- Left arrow -->
+      <button class="semester-arrow left" onclick="changeSemester(-1)">
+        &#8592;
+      </button>
+      <!-- Semester content will be injected here -->
+      <div class="semester-content" style="flex:1; max-width:500px;"></div>
+      <!-- Right arrow -->
+      <button class="semester-arrow right" onclick="changeSemester(1)">
+        &#8594;
+      </button>
+    </div>
+  </div>
+</div>
+
+
+    <footer class="fixed-footer">
+      <p class="mb-0">
+        &copy; 2024 Student Portal | All Rights Reserved -
+        <strong class="dynamic-color">IIC CLUB (MBA)</strong>
+      </p>
+    </footer>
+  </body>
+</html>
