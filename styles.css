@@ -193,7 +193,7 @@ nav ul li a {
   background: none;
   border: none;
   cursor: pointer;
-}
+} 
 
 /* .semester-content {
   min-width: 300px;
@@ -445,27 +445,6 @@ a:visited {
   background: #f1f1f1;
 }
 
-/* Carousel navigation */
-/* .prev-btn,
-.next-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-} */
-
-/* .prev-btn {
-  margin-right: 10px;
-}
-
-.next-btn {
-  margin-left: 10px;
-} */
 /* ====== Student Grid ====== */
 .students-list {
   display: flex;

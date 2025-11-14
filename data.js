@@ -431,7 +431,6 @@ const marksData = {
     ],
   },
 };
-
 // Export (optional if using modules)
 window.students = students;
 window.marksData = marksData;

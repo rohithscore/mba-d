@@ -97,8 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     semDiv,
     semesterCarousel.querySelector(".semester-arrow.right")
 );
-
-  }
+}
 
   // Change semester
   window.changeSemester = function (direction) {
